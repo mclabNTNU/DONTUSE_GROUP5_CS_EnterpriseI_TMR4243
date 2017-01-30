@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_sixaxis2force".
  *
- * Model version              : 1.41
+ * Model version              : 1.50
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Mon Jan 30 14:13:55 2017
+ * C source code generated on : Mon Jan 30 14:48:08 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -822,11 +822,11 @@ typedef struct {
   real_T u_BT_DWORK1;                  /* '<Root>/u_BT' */
   real_T u_VSP1_DWORK1;                /* '<Root>/u_VSP1' */
   real_T PosYLeft_DWORK1;              /* '<Root>/PosYLeft' */
-  real_T u_VSP2_DWORK1;                /* '<Root>/u_VSP2' */
-  real_T L2_continuous_DWORK1;         /* '<Root>/L2_continuous' */
   real_T alpha_VSP1_DWORK1;            /* '<Root>/alpha_VSP1' */
-  real_T R2_continuous_DWORK1;         /* '<Root>/R2_continuous' */
+  real_T L2_continuous_DWORK1;         /* '<Root>/L2_continuous' */
   real_T alpha_VSP2_DWORK1;            /* '<Root>/alpha_VSP2' */
+  real_T R2_continuous_DWORK1;         /* '<Root>/R2_continuous' */
+  real_T u_VSP2_DWORK1;                /* '<Root>/u_VSP2' */
   real_T omega_VSP1_DWORK1;            /* '<Root>/omega_VSP1' */
   real_T omega_VSP2_DWORK1;            /* '<Root>/omega_VSP2' */
   int32_T NIVeriStandSignalProbe_DWORK2;/* '<Root>/NIVeriStandSignalProbe' */
@@ -836,11 +836,11 @@ typedef struct {
   uint8_T u_BT_DWORK2[19];             /* '<Root>/u_BT' */
   uint8_T u_VSP1_DWORK2[19];           /* '<Root>/u_VSP1' */
   uint8_T PosYLeft_DWORK2[19];         /* '<Root>/PosYLeft' */
-  uint8_T u_VSP2_DWORK2[19];           /* '<Root>/u_VSP2' */
-  uint8_T L2_continuous_DWORK2[19];    /* '<Root>/L2_continuous' */
   uint8_T alpha_VSP1_DWORK2[19];       /* '<Root>/alpha_VSP1' */
-  uint8_T R2_continuous_DWORK2[19];    /* '<Root>/R2_continuous' */
+  uint8_T L2_continuous_DWORK2[19];    /* '<Root>/L2_continuous' */
   uint8_T alpha_VSP2_DWORK2[19];       /* '<Root>/alpha_VSP2' */
+  uint8_T R2_continuous_DWORK2[19];    /* '<Root>/R2_continuous' */
+  uint8_T u_VSP2_DWORK2[19];           /* '<Root>/u_VSP2' */
   uint8_T omega_VSP1_DWORK2[19];       /* '<Root>/omega_VSP1' */
   uint8_T omega_VSP2_DWORK2[19];       /* '<Root>/omega_VSP2' */
   uint8_T NIVeriStandSignalProbe_DWORK1[19];/* '<Root>/NIVeriStandSignalProbe' */
@@ -974,23 +974,23 @@ struct P_ctrl_sixaxis2force_T_ {
   real_T PosYLeft_P6;                  /* Expression: btype
                                         * Referenced by: '<Root>/PosYLeft'
                                         */
-  real_T u_VSP2_P1;                    /* Expression: width
-                                        * Referenced by: '<Root>/u_VSP2'
+  real_T alpha_VSP1_P1;                /* Expression: width
+                                        * Referenced by: '<Root>/alpha_VSP1'
                                         */
-  real_T u_VSP2_P2;                    /* Expression: dtype
-                                        * Referenced by: '<Root>/u_VSP2'
+  real_T alpha_VSP1_P2;                /* Expression: dtype
+                                        * Referenced by: '<Root>/alpha_VSP1'
                                         */
-  real_T u_VSP2_P3;                    /* Expression: portnum
-                                        * Referenced by: '<Root>/u_VSP2'
+  real_T alpha_VSP1_P3;                /* Expression: portnum
+                                        * Referenced by: '<Root>/alpha_VSP1'
                                         */
-  real_T u_VSP2_P4;                    /* Expression: stime
-                                        * Referenced by: '<Root>/u_VSP2'
+  real_T alpha_VSP1_P4;                /* Expression: stime
+                                        * Referenced by: '<Root>/alpha_VSP1'
                                         */
-  real_T u_VSP2_P5;                    /* Expression: stype
-                                        * Referenced by: '<Root>/u_VSP2'
+  real_T alpha_VSP1_P5;                /* Expression: stype
+                                        * Referenced by: '<Root>/alpha_VSP1'
                                         */
-  real_T u_VSP2_P6;                    /* Expression: btype
-                                        * Referenced by: '<Root>/u_VSP2'
+  real_T alpha_VSP1_P6;                /* Expression: btype
+                                        * Referenced by: '<Root>/alpha_VSP1'
                                         */
   real_T L2_continuous_P1;             /* Expression: width
                                         * Referenced by: '<Root>/L2_continuous'
@@ -1010,23 +1010,23 @@ struct P_ctrl_sixaxis2force_T_ {
   real_T L2_continuous_P6;             /* Expression: btype
                                         * Referenced by: '<Root>/L2_continuous'
                                         */
-  real_T alpha_VSP1_P1;                /* Expression: width
-                                        * Referenced by: '<Root>/alpha_VSP1'
+  real_T alpha_VSP2_P1;                /* Expression: width
+                                        * Referenced by: '<Root>/alpha_VSP2'
                                         */
-  real_T alpha_VSP1_P2;                /* Expression: dtype
-                                        * Referenced by: '<Root>/alpha_VSP1'
+  real_T alpha_VSP2_P2;                /* Expression: dtype
+                                        * Referenced by: '<Root>/alpha_VSP2'
                                         */
-  real_T alpha_VSP1_P3;                /* Expression: portnum
-                                        * Referenced by: '<Root>/alpha_VSP1'
+  real_T alpha_VSP2_P3;                /* Expression: portnum
+                                        * Referenced by: '<Root>/alpha_VSP2'
                                         */
-  real_T alpha_VSP1_P4;                /* Expression: stime
-                                        * Referenced by: '<Root>/alpha_VSP1'
+  real_T alpha_VSP2_P4;                /* Expression: stime
+                                        * Referenced by: '<Root>/alpha_VSP2'
                                         */
-  real_T alpha_VSP1_P5;                /* Expression: stype
-                                        * Referenced by: '<Root>/alpha_VSP1'
+  real_T alpha_VSP2_P5;                /* Expression: stype
+                                        * Referenced by: '<Root>/alpha_VSP2'
                                         */
-  real_T alpha_VSP1_P6;                /* Expression: btype
-                                        * Referenced by: '<Root>/alpha_VSP1'
+  real_T alpha_VSP2_P6;                /* Expression: btype
+                                        * Referenced by: '<Root>/alpha_VSP2'
                                         */
   real_T R2_continuous_P1;             /* Expression: width
                                         * Referenced by: '<Root>/R2_continuous'
@@ -1046,23 +1046,23 @@ struct P_ctrl_sixaxis2force_T_ {
   real_T R2_continuous_P6;             /* Expression: btype
                                         * Referenced by: '<Root>/R2_continuous'
                                         */
-  real_T alpha_VSP2_P1;                /* Expression: width
-                                        * Referenced by: '<Root>/alpha_VSP2'
+  real_T u_VSP2_P1;                    /* Expression: width
+                                        * Referenced by: '<Root>/u_VSP2'
                                         */
-  real_T alpha_VSP2_P2;                /* Expression: dtype
-                                        * Referenced by: '<Root>/alpha_VSP2'
+  real_T u_VSP2_P2;                    /* Expression: dtype
+                                        * Referenced by: '<Root>/u_VSP2'
                                         */
-  real_T alpha_VSP2_P3;                /* Expression: portnum
-                                        * Referenced by: '<Root>/alpha_VSP2'
+  real_T u_VSP2_P3;                    /* Expression: portnum
+                                        * Referenced by: '<Root>/u_VSP2'
                                         */
-  real_T alpha_VSP2_P4;                /* Expression: stime
-                                        * Referenced by: '<Root>/alpha_VSP2'
+  real_T u_VSP2_P4;                    /* Expression: stime
+                                        * Referenced by: '<Root>/u_VSP2'
                                         */
-  real_T alpha_VSP2_P5;                /* Expression: stype
-                                        * Referenced by: '<Root>/alpha_VSP2'
+  real_T u_VSP2_P5;                    /* Expression: stype
+                                        * Referenced by: '<Root>/u_VSP2'
                                         */
-  real_T alpha_VSP2_P6;                /* Expression: btype
-                                        * Referenced by: '<Root>/alpha_VSP2'
+  real_T u_VSP2_P6;                    /* Expression: btype
+                                        * Referenced by: '<Root>/u_VSP2'
                                         */
   real_T Constant_Value;               /* Expression: 0.3
                                         * Referenced by: '<Root>/Constant'

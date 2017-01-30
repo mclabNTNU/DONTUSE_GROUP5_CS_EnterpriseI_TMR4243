@@ -15,9 +15,9 @@
  *
  * Code generation for model "ctrl_sixaxis2force".
  *
- * Model version              : 1.41
+ * Model version              : 1.50
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Mon Jan 30 14:13:55 2017
+ * C source code generated on : Mon Jan 30 14:48:08 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -151,22 +151,22 @@ P_ctrl_sixaxis2force_T ctrl_sixaxis2force_P = {
                                         * Referenced by: '<Root>/PosYLeft'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/u_VSP2'
+                                        * Referenced by: '<Root>/alpha_VSP1'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/u_VSP2'
+                                        * Referenced by: '<Root>/alpha_VSP1'
                                         */
   3.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/u_VSP2'
+                                        * Referenced by: '<Root>/alpha_VSP1'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/u_VSP2'
+                                        * Referenced by: '<Root>/alpha_VSP1'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/u_VSP2'
+                                        * Referenced by: '<Root>/alpha_VSP1'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/u_VSP2'
+                                        * Referenced by: '<Root>/alpha_VSP1'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/L2_continuous'
@@ -187,22 +187,22 @@ P_ctrl_sixaxis2force_T ctrl_sixaxis2force_P = {
                                         * Referenced by: '<Root>/L2_continuous'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/alpha_VSP1'
+                                        * Referenced by: '<Root>/alpha_VSP2'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/alpha_VSP1'
+                                        * Referenced by: '<Root>/alpha_VSP2'
                                         */
   4.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/alpha_VSP1'
+                                        * Referenced by: '<Root>/alpha_VSP2'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/alpha_VSP1'
+                                        * Referenced by: '<Root>/alpha_VSP2'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/alpha_VSP1'
+                                        * Referenced by: '<Root>/alpha_VSP2'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/alpha_VSP1'
+                                        * Referenced by: '<Root>/alpha_VSP2'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/R2_continuous'
@@ -223,22 +223,22 @@ P_ctrl_sixaxis2force_T ctrl_sixaxis2force_P = {
                                         * Referenced by: '<Root>/R2_continuous'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/alpha_VSP2'
+                                        * Referenced by: '<Root>/u_VSP2'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/alpha_VSP2'
+                                        * Referenced by: '<Root>/u_VSP2'
                                         */
   5.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/alpha_VSP2'
+                                        * Referenced by: '<Root>/u_VSP2'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/alpha_VSP2'
+                                        * Referenced by: '<Root>/u_VSP2'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/alpha_VSP2'
+                                        * Referenced by: '<Root>/u_VSP2'
                                         */
   0.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/alpha_VSP2'
+                                        * Referenced by: '<Root>/u_VSP2'
                                         */
   0.3,                                 /* Expression: 0.3
                                         * Referenced by: '<Root>/Constant'
