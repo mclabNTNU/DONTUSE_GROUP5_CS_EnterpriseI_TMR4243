@@ -9,11 +9,15 @@
 /*
  * ctrl_sixaxis2force_data.c
  *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
  * Code generation for model "ctrl_sixaxis2force".
  *
- * Model version              : 1.26
- * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Sun Mar 08 15:44:17 2015
+ * Model version              : 1.41
+ * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
+ * C source code generated on : Mon Jan 30 14:13:55 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -45,68 +49,50 @@ P_ctrl_sixaxis2force_T ctrl_sixaxis2force_P = {
                                         * Referenced by: '<Root>/PosXLeft'
                                         */
   -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/PosYLeft'
+                                        * Referenced by: '<Root>/PosYRight'
                                         */
   1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/PosYLeft'
+                                        * Referenced by: '<Root>/PosYRight'
                                         */
-  2.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/PosYLeft'
+  6.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/PosYRight'
                                         */
   -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/PosYLeft'
+                                        * Referenced by: '<Root>/PosYRight'
                                         */
   1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/PosYLeft'
+                                        * Referenced by: '<Root>/PosYRight'
                                         */
   1.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/PosYLeft'
+                                        * Referenced by: '<Root>/PosYRight'
                                         */
   -1.0,                                /* Expression: -1
-                                        * Referenced by: '<Root>/Gain1'
-                                        */
-  -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/L2_continuous'
-                                        */
-  1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/L2_continuous'
-                                        */
-  3.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/L2_continuous'
-                                        */
-  -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/L2_continuous'
-                                        */
-  1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/L2_continuous'
-                                        */
-  1.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/L2_continuous'
-                                        */
-  -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/R2_continuous'
-                                        */
-  1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/R2_continuous'
-                                        */
-  4.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/R2_continuous'
-                                        */
-  -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/R2_continuous'
-                                        */
-  1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/R2_continuous'
-                                        */
-  1.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/R2_continuous'
-                                        */
-  -0.5,                                /* Expression: -.5
                                         * Referenced by: '<Root>/Gain'
                                         */
-  1.0,                                 /* Expression: 1
-                                        * Referenced by: '<Root>/True'
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/PosXRight'
                                         */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  5.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+
+  /*  Expression: inv([1/1.165 0 0; 0 1/1.165 1/2.629; 0 -0.4575/1.165 0.3875/2.629])
+   * Referenced by: '<Root>/Inverse of T'
+   */
+  { 1.165, 0.0, 0.0, -0.0, 0.5342455621301776, 1.4233934911242603, -0.0,
+    -1.3786982248520709, 3.1112426035502958 },
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/u_BT'
                                         */
@@ -125,6 +111,9 @@ P_ctrl_sixaxis2force_T ctrl_sixaxis2force_P = {
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<Root>/u_BT'
                                         */
+  0.5,                                 /* Expression: 0.5
+                                        * Referenced by: '<Root>/Gain1'
+                                        */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/u_VSP1'
                                         */
@@ -142,6 +131,24 @@ P_ctrl_sixaxis2force_T ctrl_sixaxis2force_P = {
                                         */
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<Root>/u_VSP1'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/PosYLeft'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/PosYLeft'
+                                        */
+  2.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/PosYLeft'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/PosYLeft'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/PosYLeft'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/PosYLeft'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/u_VSP2'
@@ -162,6 +169,24 @@ P_ctrl_sixaxis2force_T ctrl_sixaxis2force_P = {
                                         * Referenced by: '<Root>/u_VSP2'
                                         */
   -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/L2_continuous'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/L2_continuous'
+                                        */
+  3.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/L2_continuous'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/L2_continuous'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/L2_continuous'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/L2_continuous'
+                                        */
+  -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/alpha_VSP1'
                                         */
   1.0,                                 /* Expression: dtype
@@ -180,6 +205,24 @@ P_ctrl_sixaxis2force_T ctrl_sixaxis2force_P = {
                                         * Referenced by: '<Root>/alpha_VSP1'
                                         */
   -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/R2_continuous'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/R2_continuous'
+                                        */
+  4.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/R2_continuous'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/R2_continuous'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/R2_continuous'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/R2_continuous'
+                                        */
+  -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/alpha_VSP2'
                                         */
   1.0,                                 /* Expression: dtype
@@ -196,6 +239,9 @@ P_ctrl_sixaxis2force_T ctrl_sixaxis2force_P = {
                                         */
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<Root>/alpha_VSP2'
+                                        */
+  0.3,                                 /* Expression: 0.3
+                                        * Referenced by: '<Root>/Constant'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/omega_VSP1'
@@ -263,6 +309,32 @@ NI_ParamSizeWidth P_ctrl_sixaxis2force_T_sizes[] DataSection(
   { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 1, 0 },
+
+  { sizeof(real_T), 9, 0 },
 
   { sizeof(real_T), 1, 0 },
 

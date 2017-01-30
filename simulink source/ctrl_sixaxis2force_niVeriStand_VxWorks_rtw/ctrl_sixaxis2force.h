@@ -1,11 +1,15 @@
 /*
  * ctrl_sixaxis2force.h
  *
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
  * Code generation for model "ctrl_sixaxis2force".
  *
- * Model version              : 1.26
- * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
- * C source code generated on : Sun Mar 08 15:44:17 2015
+ * Model version              : 1.41
+ * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
+ * C source code generated on : Mon Jan 30 14:13:55 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -13,6 +17,7 @@
  * Code generation objectives: Unspecified
  * Validation result: Not run
  */
+
 #ifndef RTW_HEADER_ctrl_sixaxis2force_h_
 #define RTW_HEADER_ctrl_sixaxis2force_h_
 #include <math.h>
@@ -21,6 +26,7 @@
 #ifndef ctrl_sixaxis2force_COMMON_INCLUDES_
 # define ctrl_sixaxis2force_COMMON_INCLUDES_
 #include "rtwtypes.h"
+#include "zero_crossing_types.h"
 #include "simstruc.h"
 #include "fixedpoint.h"
 #include "rt_logging.h"
@@ -250,6 +256,14 @@
 # define rtmSetNumOutputPorts(rtm, val) ((rtm)->Sizes.numOports = (val))
 #endif
 
+#ifndef rtmGetNumPeriodicContStates
+# define rtmGetNumPeriodicContStates(rtm) ((rtm)->Sizes.numPeriodicContStates)
+#endif
+
+#ifndef rtmSetNumPeriodicContStates
+# define rtmSetNumPeriodicContStates(rtm, val) ((rtm)->Sizes.numPeriodicContStates = (val))
+#endif
+
 #ifndef rtmGetNumSFcnParams
 # define rtmGetNumSFcnParams(rtm)      ((rtm)->Sizes.numSFcnPrms)
 #endif
@@ -368,6 +382,22 @@
 
 #ifndef rtmSetPerTaskSampleHitsPtr
 # define rtmSetPerTaskSampleHitsPtr(rtm, val) ((rtm)->Timing.perTaskSampleHits = (val))
+#endif
+
+#ifndef rtmGetPeriodicContStateIndices
+# define rtmGetPeriodicContStateIndices(rtm) ((rtm)->ModelData.periodicContStateIndices)
+#endif
+
+#ifndef rtmSetPeriodicContStateIndices
+# define rtmSetPeriodicContStateIndices(rtm, val) ((rtm)->ModelData.periodicContStateIndices = (val))
+#endif
+
+#ifndef rtmGetPeriodicContStateRanges
+# define rtmGetPeriodicContStateRanges(rtm) ((rtm)->ModelData.periodicContStateRanges)
+#endif
+
+#ifndef rtmSetPeriodicContStateRanges
+# define rtmSetPeriodicContStateRanges(rtm, val) ((rtm)->ModelData.periodicContStateRanges = (val))
 #endif
 
 #ifndef rtmGetPrevZCSigState
@@ -774,37 +804,42 @@
 /* Block signals (auto storage) */
 typedef struct {
   real_T PosXLeft;                     /* '<Root>/PosXLeft' */
+  real_T PosYRight;                    /* '<Root>/PosYRight' */
+  real_T PosXRight;                    /* '<Root>/PosXRight' */
+  real_T Gain1;                        /* '<Root>/Gain1' */
   real_T PosYLeft;                     /* '<Root>/PosYLeft' */
   real_T L2_continuous;                /* '<Root>/L2_continuous' */
   real_T R2_continuous;                /* '<Root>/R2_continuous' */
-  real_T u_BT;                         /* '<Root>/Thrust allocation' */
-  real_T u_VSP;                        /* '<Root>/Thrust allocation' */
-  real_T alpha_VSP;                    /* '<Root>/Thrust allocation' */
-  real_T omega_VSP;                    /* '<Root>/Thrust allocation' */
+  real_T alpha_VSP;                    /* '<Root>/MATLAB Function1' */
+  real_T u_BT;                         /* '<Root>/MATLAB Function1' */
 } B_ctrl_sixaxis2force_T;
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
   real_T PosXLeft_DWORK1;              /* '<Root>/PosXLeft' */
-  real_T PosYLeft_DWORK1;              /* '<Root>/PosYLeft' */
-  real_T L2_continuous_DWORK1;         /* '<Root>/L2_continuous' */
-  real_T R2_continuous_DWORK1;         /* '<Root>/R2_continuous' */
+  real_T PosYRight_DWORK1;             /* '<Root>/PosYRight' */
+  real_T PosXRight_DWORK1;             /* '<Root>/PosXRight' */
   real_T u_BT_DWORK1;                  /* '<Root>/u_BT' */
   real_T u_VSP1_DWORK1;                /* '<Root>/u_VSP1' */
+  real_T PosYLeft_DWORK1;              /* '<Root>/PosYLeft' */
   real_T u_VSP2_DWORK1;                /* '<Root>/u_VSP2' */
+  real_T L2_continuous_DWORK1;         /* '<Root>/L2_continuous' */
   real_T alpha_VSP1_DWORK1;            /* '<Root>/alpha_VSP1' */
+  real_T R2_continuous_DWORK1;         /* '<Root>/R2_continuous' */
   real_T alpha_VSP2_DWORK1;            /* '<Root>/alpha_VSP2' */
   real_T omega_VSP1_DWORK1;            /* '<Root>/omega_VSP1' */
   real_T omega_VSP2_DWORK1;            /* '<Root>/omega_VSP2' */
   int32_T NIVeriStandSignalProbe_DWORK2;/* '<Root>/NIVeriStandSignalProbe' */
   uint8_T PosXLeft_DWORK2[19];         /* '<Root>/PosXLeft' */
-  uint8_T PosYLeft_DWORK2[19];         /* '<Root>/PosYLeft' */
-  uint8_T L2_continuous_DWORK2[19];    /* '<Root>/L2_continuous' */
-  uint8_T R2_continuous_DWORK2[19];    /* '<Root>/R2_continuous' */
+  uint8_T PosYRight_DWORK2[19];        /* '<Root>/PosYRight' */
+  uint8_T PosXRight_DWORK2[19];        /* '<Root>/PosXRight' */
   uint8_T u_BT_DWORK2[19];             /* '<Root>/u_BT' */
   uint8_T u_VSP1_DWORK2[19];           /* '<Root>/u_VSP1' */
+  uint8_T PosYLeft_DWORK2[19];         /* '<Root>/PosYLeft' */
   uint8_T u_VSP2_DWORK2[19];           /* '<Root>/u_VSP2' */
+  uint8_T L2_continuous_DWORK2[19];    /* '<Root>/L2_continuous' */
   uint8_T alpha_VSP1_DWORK2[19];       /* '<Root>/alpha_VSP1' */
+  uint8_T R2_continuous_DWORK2[19];    /* '<Root>/R2_continuous' */
   uint8_T alpha_VSP2_DWORK2[19];       /* '<Root>/alpha_VSP2' */
   uint8_T omega_VSP1_DWORK2[19];       /* '<Root>/omega_VSP1' */
   uint8_T omega_VSP2_DWORK2[19];       /* '<Root>/omega_VSP2' */
@@ -840,68 +875,47 @@ struct P_ctrl_sixaxis2force_T_ {
   real_T PosXLeft_P6;                  /* Expression: btype
                                         * Referenced by: '<Root>/PosXLeft'
                                         */
-  real_T PosYLeft_P1;                  /* Expression: width
-                                        * Referenced by: '<Root>/PosYLeft'
+  real_T PosYRight_P1;                 /* Expression: width
+                                        * Referenced by: '<Root>/PosYRight'
                                         */
-  real_T PosYLeft_P2;                  /* Expression: dtype
-                                        * Referenced by: '<Root>/PosYLeft'
+  real_T PosYRight_P2;                 /* Expression: dtype
+                                        * Referenced by: '<Root>/PosYRight'
                                         */
-  real_T PosYLeft_P3;                  /* Expression: portnum
-                                        * Referenced by: '<Root>/PosYLeft'
+  real_T PosYRight_P3;                 /* Expression: portnum
+                                        * Referenced by: '<Root>/PosYRight'
                                         */
-  real_T PosYLeft_P4;                  /* Expression: stime
-                                        * Referenced by: '<Root>/PosYLeft'
+  real_T PosYRight_P4;                 /* Expression: stime
+                                        * Referenced by: '<Root>/PosYRight'
                                         */
-  real_T PosYLeft_P5;                  /* Expression: stype
-                                        * Referenced by: '<Root>/PosYLeft'
+  real_T PosYRight_P5;                 /* Expression: stype
+                                        * Referenced by: '<Root>/PosYRight'
                                         */
-  real_T PosYLeft_P6;                  /* Expression: btype
-                                        * Referenced by: '<Root>/PosYLeft'
+  real_T PosYRight_P6;                 /* Expression: btype
+                                        * Referenced by: '<Root>/PosYRight'
                                         */
-  real_T Gain1_Gain;                   /* Expression: -1
-                                        * Referenced by: '<Root>/Gain1'
-                                        */
-  real_T L2_continuous_P1;             /* Expression: width
-                                        * Referenced by: '<Root>/L2_continuous'
-                                        */
-  real_T L2_continuous_P2;             /* Expression: dtype
-                                        * Referenced by: '<Root>/L2_continuous'
-                                        */
-  real_T L2_continuous_P3;             /* Expression: portnum
-                                        * Referenced by: '<Root>/L2_continuous'
-                                        */
-  real_T L2_continuous_P4;             /* Expression: stime
-                                        * Referenced by: '<Root>/L2_continuous'
-                                        */
-  real_T L2_continuous_P5;             /* Expression: stype
-                                        * Referenced by: '<Root>/L2_continuous'
-                                        */
-  real_T L2_continuous_P6;             /* Expression: btype
-                                        * Referenced by: '<Root>/L2_continuous'
-                                        */
-  real_T R2_continuous_P1;             /* Expression: width
-                                        * Referenced by: '<Root>/R2_continuous'
-                                        */
-  real_T R2_continuous_P2;             /* Expression: dtype
-                                        * Referenced by: '<Root>/R2_continuous'
-                                        */
-  real_T R2_continuous_P3;             /* Expression: portnum
-                                        * Referenced by: '<Root>/R2_continuous'
-                                        */
-  real_T R2_continuous_P4;             /* Expression: stime
-                                        * Referenced by: '<Root>/R2_continuous'
-                                        */
-  real_T R2_continuous_P5;             /* Expression: stype
-                                        * Referenced by: '<Root>/R2_continuous'
-                                        */
-  real_T R2_continuous_P6;             /* Expression: btype
-                                        * Referenced by: '<Root>/R2_continuous'
-                                        */
-  real_T Gain_Gain;                    /* Expression: -.5
+  real_T Gain_Gain;                    /* Expression: -1
                                         * Referenced by: '<Root>/Gain'
                                         */
-  real_T True_Value;                   /* Expression: 1
-                                        * Referenced by: '<Root>/True'
+  real_T PosXRight_P1;                 /* Expression: width
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  real_T PosXRight_P2;                 /* Expression: dtype
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  real_T PosXRight_P3;                 /* Expression: portnum
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  real_T PosXRight_P4;                 /* Expression: stime
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  real_T PosXRight_P5;                 /* Expression: stype
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  real_T PosXRight_P6;                 /* Expression: btype
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  real_T InverseofT_Value[9];          /* Expression: inv([1/1.165 0 0; 0 1/1.165 1/2.629; 0 -0.4575/1.165 0.3875/2.629])
+                                        * Referenced by: '<Root>/Inverse of T'
                                         */
   real_T u_BT_P1;                      /* Expression: width
                                         * Referenced by: '<Root>/u_BT'
@@ -921,6 +935,9 @@ struct P_ctrl_sixaxis2force_T_ {
   real_T u_BT_P6;                      /* Expression: btype
                                         * Referenced by: '<Root>/u_BT'
                                         */
+  real_T Gain1_Gain;                   /* Expression: 0.5
+                                        * Referenced by: '<Root>/Gain1'
+                                        */
   real_T u_VSP1_P1;                    /* Expression: width
                                         * Referenced by: '<Root>/u_VSP1'
                                         */
@@ -938,6 +955,24 @@ struct P_ctrl_sixaxis2force_T_ {
                                         */
   real_T u_VSP1_P6;                    /* Expression: btype
                                         * Referenced by: '<Root>/u_VSP1'
+                                        */
+  real_T PosYLeft_P1;                  /* Expression: width
+                                        * Referenced by: '<Root>/PosYLeft'
+                                        */
+  real_T PosYLeft_P2;                  /* Expression: dtype
+                                        * Referenced by: '<Root>/PosYLeft'
+                                        */
+  real_T PosYLeft_P3;                  /* Expression: portnum
+                                        * Referenced by: '<Root>/PosYLeft'
+                                        */
+  real_T PosYLeft_P4;                  /* Expression: stime
+                                        * Referenced by: '<Root>/PosYLeft'
+                                        */
+  real_T PosYLeft_P5;                  /* Expression: stype
+                                        * Referenced by: '<Root>/PosYLeft'
+                                        */
+  real_T PosYLeft_P6;                  /* Expression: btype
+                                        * Referenced by: '<Root>/PosYLeft'
                                         */
   real_T u_VSP2_P1;                    /* Expression: width
                                         * Referenced by: '<Root>/u_VSP2'
@@ -957,6 +992,24 @@ struct P_ctrl_sixaxis2force_T_ {
   real_T u_VSP2_P6;                    /* Expression: btype
                                         * Referenced by: '<Root>/u_VSP2'
                                         */
+  real_T L2_continuous_P1;             /* Expression: width
+                                        * Referenced by: '<Root>/L2_continuous'
+                                        */
+  real_T L2_continuous_P2;             /* Expression: dtype
+                                        * Referenced by: '<Root>/L2_continuous'
+                                        */
+  real_T L2_continuous_P3;             /* Expression: portnum
+                                        * Referenced by: '<Root>/L2_continuous'
+                                        */
+  real_T L2_continuous_P4;             /* Expression: stime
+                                        * Referenced by: '<Root>/L2_continuous'
+                                        */
+  real_T L2_continuous_P5;             /* Expression: stype
+                                        * Referenced by: '<Root>/L2_continuous'
+                                        */
+  real_T L2_continuous_P6;             /* Expression: btype
+                                        * Referenced by: '<Root>/L2_continuous'
+                                        */
   real_T alpha_VSP1_P1;                /* Expression: width
                                         * Referenced by: '<Root>/alpha_VSP1'
                                         */
@@ -975,6 +1028,24 @@ struct P_ctrl_sixaxis2force_T_ {
   real_T alpha_VSP1_P6;                /* Expression: btype
                                         * Referenced by: '<Root>/alpha_VSP1'
                                         */
+  real_T R2_continuous_P1;             /* Expression: width
+                                        * Referenced by: '<Root>/R2_continuous'
+                                        */
+  real_T R2_continuous_P2;             /* Expression: dtype
+                                        * Referenced by: '<Root>/R2_continuous'
+                                        */
+  real_T R2_continuous_P3;             /* Expression: portnum
+                                        * Referenced by: '<Root>/R2_continuous'
+                                        */
+  real_T R2_continuous_P4;             /* Expression: stime
+                                        * Referenced by: '<Root>/R2_continuous'
+                                        */
+  real_T R2_continuous_P5;             /* Expression: stype
+                                        * Referenced by: '<Root>/R2_continuous'
+                                        */
+  real_T R2_continuous_P6;             /* Expression: btype
+                                        * Referenced by: '<Root>/R2_continuous'
+                                        */
   real_T alpha_VSP2_P1;                /* Expression: width
                                         * Referenced by: '<Root>/alpha_VSP2'
                                         */
@@ -992,6 +1063,9 @@ struct P_ctrl_sixaxis2force_T_ {
                                         */
   real_T alpha_VSP2_P6;                /* Expression: btype
                                         * Referenced by: '<Root>/alpha_VSP2'
+                                        */
+  real_T Constant_Value;               /* Expression: 0.3
+                                        * Referenced by: '<Root>/Constant'
                                         */
   real_T omega_VSP1_P1;                /* Expression: width
                                         * Referenced by: '<Root>/omega_VSP1'
@@ -1058,6 +1132,8 @@ struct tag_RTM_ctrl_sixaxis2force_T {
     void *defaultParam;
     ZCSigState *prevZCSigState;
     real_T *contStates;
+    int_T *periodicContStateIndices;
+    real_T *periodicContStateRanges;
     real_T *derivs;
     void *zcSignalValues;
     void *inputs;
@@ -1079,6 +1155,7 @@ struct tag_RTM_ctrl_sixaxis2force_T {
     uint32_T checksums[4];
     uint32_T options;
     int_T numContStates;
+    int_T numPeriodicContStates;
     int_T numU;
     int_T numY;
     int_T numSampTimes;
@@ -1146,6 +1223,18 @@ extern B_ctrl_sixaxis2force_T ctrl_sixaxis2force_B;
 /* Block states (auto storage) */
 extern DW_ctrl_sixaxis2force_T ctrl_sixaxis2force_DW;
 
+/*====================*
+ * External functions *
+ *====================*/
+extern ctrl_sixaxis2force_rtModel *ctrl_sixaxis2force(void);
+extern void MdlInitializeSizes(void);
+extern void MdlInitializeSampleTimes(void);
+extern void MdlInitialize(void);
+extern void MdlStart(void);
+extern void MdlOutputs(int_T tid);
+extern void MdlUpdate(int_T tid);
+extern void MdlTerminate(void);
+
 /* Real-time Model object */
 extern RT_MODEL_ctrl_sixaxis2force_T *const ctrl_sixaxis2force_M;
 
@@ -1164,7 +1253,8 @@ extern RT_MODEL_ctrl_sixaxis2force_T *const ctrl_sixaxis2force_M;
  * Here is the system hierarchy for this model
  *
  * '<Root>' : 'ctrl_sixaxis2force'
- * '<S1>'   : 'ctrl_sixaxis2force/Thrust allocation'
+ * '<S1>'   : 'ctrl_sixaxis2force/MATLAB Function'
+ * '<S2>'   : 'ctrl_sixaxis2force/MATLAB Function1'
  */
 #endif                                 /* RTW_HEADER_ctrl_sixaxis2force_h_ */
 

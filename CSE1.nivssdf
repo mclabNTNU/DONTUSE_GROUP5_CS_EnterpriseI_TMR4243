@@ -10,7 +10,7 @@
 				<String>CSE1</String>
 			</Property>
 			<Property Name="Version">
-				<String>1.0.0.51</String>
+				<String>1.0.0.63</String>
 			</Property>
 			<Property Name="Creator">
 				<String />
@@ -31,7 +31,7 @@
 						<String>VxWorks</String>
 					</Property>
 					<Property Name="IP Address">
-						<String>192.168.0.71</String>
+						<String>192.168.0.73</String>
 					</Property>
 					<Property Name="Control Loop Processor">
 						<I32>-2</I32>
@@ -1295,10 +1295,10 @@
 									<Double>10000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>130742</I32>
+									<I32>131215</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3568287189.962254</Double>
+									<Double>3568626492.8434391</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -1342,7 +1342,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_sixaxis2thruster.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>8749955099adfff98082d755802adf9f</MD5>
+										<MD5>d2c695c965021e5590ed1f0538fa9e84</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
@@ -1447,7 +1447,7 @@
 											<String>PosYRight</String>
 										</Property>
 										<Property Name="Index">
-											<I32>4</I32>
+											<I32>2</I32>
 										</Property>
 										<Property Name="DataSource">
 											<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosYRight" />
@@ -1465,7 +1465,7 @@
 											<String>PosXRight</String>
 										</Property>
 										<Property Name="Index">
-											<I32>2</I32>
+											<I32>3</I32>
 										</Property>
 										<Property Name="DataSource">
 											<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosXRight" />
@@ -1483,7 +1483,7 @@
 											<String>Start</String>
 										</Property>
 										<Property Name="Index">
-											<I32>3</I32>
+											<I32>4</I32>
 										</Property>
 										<Property Name="DataSource">
 											<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/Start" />
@@ -1676,21 +1676,6 @@
 										<Elem>0</Elem>
 									</DefaultValue>
 								</Channel>
-								<Channel Name="SCOPE_BT" TypeGUID="03D3B995-1485-13A6-56ABA0860ADF91DF" RowDim="1" ColDim="1" Units="" BitFields="5">
-									<Description />
-									<Properties>
-										<Property Name="Model Path">
-											<String>SCOPE_BT</String>
-										</Property>
-										<Property Name="Index">
-											<I32>16</I32>
-										</Property>
-									</Properties>
-									<Errors />
-									<DefaultValue>
-										<Elem>0</Elem>
-									</DefaultValue>
-								</Channel>
 							</Section>
 							<Section Name="Parameters" TypeGUID="03D3BB0C-1485-13A6-56E10CEFF755E7D3">
 								<Description />
@@ -1710,10 +1695,10 @@
 									<Double>10000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>124629</I32>
+									<I32>127717</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3560930134.0461493</Double>
+									<Double>3568626558.3596015</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -1757,7 +1742,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_sixaxis2force.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>a12da438eb51f28f1bb859ffe7cd0a89</MD5>
+										<MD5>e6128f5d844363747ced0f911c648b13</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">
@@ -1844,7 +1829,7 @@
 											<String>PosYLeft</String>
 										</Property>
 										<Property Name="Index">
-											<I32>1</I32>
+											<I32>3</I32>
 										</Property>
 										<Property Name="DataSource">
 											<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/PosYLeft" />
@@ -1862,7 +1847,7 @@
 											<String>L2_continuous</String>
 										</Property>
 										<Property Name="Index">
-											<I32>2</I32>
+											<I32>4</I32>
 										</Property>
 										<Property Name="DataSource">
 											<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/L2_cont" />
@@ -1880,10 +1865,40 @@
 											<String>R2_continuous</String>
 										</Property>
 										<Property Name="Index">
-											<I32>3</I32>
+											<I32>5</I32>
 										</Property>
 										<Property Name="DataSource">
 											<DataSourceNode Channel="Targets/Controller/Custom Devices/WL_Joystick/R2_cont" />
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="PosYRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>PosYRight</String>
+										</Property>
+										<Property Name="Index">
+											<I32>1</I32>
+										</Property>
+									</Properties>
+									<Errors />
+									<DefaultValue>
+										<Elem>0</Elem>
+									</DefaultValue>
+								</Channel>
+								<Channel Name="PosXRight" TypeGUID="03D3B985-1485-13A6-56FC3200A1C00087" RowDim="1" ColDim="1" Units="" BitFields="7">
+									<Description />
+									<Properties>
+										<Property Name="Model Path">
+											<String>PosXRight</String>
+										</Property>
+										<Property Name="Index">
+											<I32>2</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -1903,7 +1918,7 @@
 											<String>u_BT</String>
 										</Property>
 										<Property Name="Index">
-											<I32>4</I32>
+											<I32>6</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -1918,7 +1933,7 @@
 											<String>u_VSP1</String>
 										</Property>
 										<Property Name="Index">
-											<I32>5</I32>
+											<I32>7</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -1933,7 +1948,7 @@
 											<String>u_VSP2</String>
 										</Property>
 										<Property Name="Index">
-											<I32>6</I32>
+											<I32>8</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -1948,7 +1963,7 @@
 											<String>alpha_VSP1</String>
 										</Property>
 										<Property Name="Index">
-											<I32>7</I32>
+											<I32>9</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -1963,7 +1978,7 @@
 											<String>alpha_VSP2</String>
 										</Property>
 										<Property Name="Index">
-											<I32>8</I32>
+											<I32>10</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -1978,7 +1993,7 @@
 											<String>omega_VSP1</String>
 										</Property>
 										<Property Name="Index">
-											<I32>9</I32>
+											<I32>11</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -1993,7 +2008,7 @@
 											<String>omega_VSP2</String>
 										</Property>
 										<Property Name="Index">
-											<I32>10</I32>
+											<I32>12</I32>
 										</Property>
 									</Properties>
 									<Errors />
@@ -3454,10 +3469,10 @@
 									<Double>10000</Double>
 								</Property>
 								<Property Name="DLL Size">
-									<I32>173009</I32>
+									<I32>173033</I32>
 								</Property>
 								<Property Name="DLL Timestamp">
-									<Double>3560930134.2422414</Double>
+									<Double>3568626509.2863588</Double>
 								</Property>
 								<Property Name="Decimation">
 									<I32>1</I32>
@@ -3501,7 +3516,7 @@
 										<ForceDownload>false</ForceDownload>
 										<RTDestination>c:\ni-rt\system\ctrl_switch.out</RTDestination>
 										<SupportedTarget>VxWorks</SupportedTarget>
-										<MD5>bbab8d38dc14248708acb69f43f2d7ad</MD5>
+										<MD5>394d60ab285f70d423310f4d34d76e27</MD5>
 									</DependentFile>
 								</Property>
 								<Property Name="GlobalParameterScopes">

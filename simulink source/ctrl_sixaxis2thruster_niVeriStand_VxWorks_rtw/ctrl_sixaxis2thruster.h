@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_sixaxis2thruster".
  *
- * Model version              : 1.28
+ * Model version              : 1.38
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Thu Jan 26 15:49:47 2017
+ * C source code generated on : Mon Jan 30 14:07:54 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -20,6 +20,7 @@
 
 #ifndef RTW_HEADER_ctrl_sixaxis2thruster_h_
 #define RTW_HEADER_ctrl_sixaxis2thruster_h_
+#include <math.h>
 #include <string.h>
 #include <stddef.h>
 #ifndef ctrl_sixaxis2thruster_COMMON_INCLUDES_
@@ -804,11 +805,13 @@
 typedef struct {
   real_T PosXLeft;                     /* '<Root>/PosXLeft' */
   real_T PosYLeft;                     /* '<Root>/PosYLeft' */
-  real_T Gain1;                        /* '<Root>/Gain1' */
-  real_T PosXRight;                    /* '<Root>/PosXRight' */
-  real_T Start;                        /* '<Root>/Start' */
+  real_T Abs1;                         /* '<Root>/Abs1' */
   real_T PosYRight;                    /* '<Root>/PosYRight' */
-  real_T Gain;                         /* '<Root>/Gain' */
+  real_T Switch1;                      /* '<Root>/Switch1' */
+  real_T Switch;                       /* '<Root>/Switch' */
+  real_T PosXRight;                    /* '<Root>/PosXRight' */
+  real_T Abs;                          /* '<Root>/Abs' */
+  real_T Start;                        /* '<Root>/Start' */
   real_T ArrowUp;                      /* '<Root>/ArrowUp' */
   real_T L2_continuous;                /* '<Root>/L2_continuous' */
   real_T R2_continuous;                /* '<Root>/R2_continuous' */
@@ -821,12 +824,12 @@ typedef struct {
   real_T PosXLeft_DWORK1;              /* '<Root>/PosXLeft' */
   real_T PosYLeft_DWORK1;              /* '<Root>/PosYLeft' */
   real_T u_VSP1_DWORK1;                /* '<Root>/u_VSP1' */
-  real_T alpha_VSP2_DWORK1;            /* '<Root>/alpha_VSP2' */
-  real_T PosXRight_DWORK1;             /* '<Root>/PosXRight' */
-  real_T alpha_VSP1_DWORK1;            /* '<Root>/alpha_VSP1' */
-  real_T Start_DWORK1;                 /* '<Root>/Start' */
   real_T PosYRight_DWORK1;             /* '<Root>/PosYRight' */
+  real_T alpha_VSP2_DWORK1;            /* '<Root>/alpha_VSP2' */
+  real_T alpha_VSP1_DWORK1;            /* '<Root>/alpha_VSP1' */
+  real_T PosXRight_DWORK1;             /* '<Root>/PosXRight' */
   real_T u_VSP2_DWORK1;                /* '<Root>/u_VSP2' */
+  real_T Start_DWORK1;                 /* '<Root>/Start' */
   real_T ArrowUp_DWORK1;               /* '<Root>/ArrowUp' */
   real_T L2_continuous_DWORK1;         /* '<Root>/L2_continuous' */
   real_T R2_continuous_DWORK1;         /* '<Root>/R2_continuous' */
@@ -834,17 +837,16 @@ typedef struct {
   real_T ArrowDown_DWORK1;             /* '<Root>/ArrowDown' */
   real_T omega_VSP1_DWORK1;            /* '<Root>/omega_VSP1' */
   real_T omega_VSP2_DWORK1;            /* '<Root>/omega_VSP2' */
-  real_T SCOPE_BT_DWORK1;              /* '<Root>/SCOPE_BT' */
   int32_T NIVeriStandSignalProbe_DWORK2;/* '<Root>/NIVeriStandSignalProbe' */
   uint8_T PosXLeft_DWORK2[22];         /* '<Root>/PosXLeft' */
   uint8_T PosYLeft_DWORK2[22];         /* '<Root>/PosYLeft' */
   uint8_T u_VSP1_DWORK2[22];           /* '<Root>/u_VSP1' */
-  uint8_T alpha_VSP2_DWORK2[22];       /* '<Root>/alpha_VSP2' */
-  uint8_T PosXRight_DWORK2[22];        /* '<Root>/PosXRight' */
-  uint8_T alpha_VSP1_DWORK2[22];       /* '<Root>/alpha_VSP1' */
-  uint8_T Start_DWORK2[22];            /* '<Root>/Start' */
   uint8_T PosYRight_DWORK2[22];        /* '<Root>/PosYRight' */
+  uint8_T alpha_VSP2_DWORK2[22];       /* '<Root>/alpha_VSP2' */
+  uint8_T alpha_VSP1_DWORK2[22];       /* '<Root>/alpha_VSP1' */
+  uint8_T PosXRight_DWORK2[22];        /* '<Root>/PosXRight' */
   uint8_T u_VSP2_DWORK2[22];           /* '<Root>/u_VSP2' */
+  uint8_T Start_DWORK2[22];            /* '<Root>/Start' */
   uint8_T ArrowUp_DWORK2[22];          /* '<Root>/ArrowUp' */
   uint8_T L2_continuous_DWORK2[22];    /* '<Root>/L2_continuous' */
   uint8_T R2_continuous_DWORK2[22];    /* '<Root>/R2_continuous' */
@@ -852,7 +854,6 @@ typedef struct {
   uint8_T ArrowDown_DWORK2[22];        /* '<Root>/ArrowDown' */
   uint8_T omega_VSP1_DWORK2[22];       /* '<Root>/omega_VSP1' */
   uint8_T omega_VSP2_DWORK2[22];       /* '<Root>/omega_VSP2' */
-  uint8_T SCOPE_BT_DWORK2[22];         /* '<Root>/SCOPE_BT' */
   uint8_T NIVeriStandSignalProbe_DWORK1[22];/* '<Root>/NIVeriStandSignalProbe' */
   uint8_T NIVeriStandSignalProbe_DWORK3[65];/* '<Root>/NIVeriStandSignalProbe' */
 } DW_ctrl_sixaxis2thruster_T;
@@ -867,6 +868,18 @@ typedef struct {
 
 /* Parameters (auto storage) */
 struct P_ctrl_sixaxis2thruster_T_ {
+  real_T Constant4_Value;              /* Expression: pi
+                                        * Referenced by: '<Root>/Constant4'
+                                        */
+  real_T Constant3_Value;              /* Expression: 0
+                                        * Referenced by: '<Root>/Constant3'
+                                        */
+  real_T Constant2_Value;              /* Expression: pi
+                                        * Referenced by: '<Root>/Constant2'
+                                        */
+  real_T Constant1_Value;              /* Expression: 0
+                                        * Referenced by: '<Root>/Constant1'
+                                        */
   real_T PosXLeft_P1;                  /* Expression: width
                                         * Referenced by: '<Root>/PosXLeft'
                                         */
@@ -903,8 +916,8 @@ struct P_ctrl_sixaxis2thruster_T_ {
   real_T PosYLeft_P6;                  /* Expression: btype
                                         * Referenced by: '<Root>/PosYLeft'
                                         */
-  real_T Gain1_Gain;                   /* Expression: -1
-                                        * Referenced by: '<Root>/Gain1'
+  real_T Gain_Gain;                    /* Expression: -1
+                                        * Referenced by: '<Root>/Gain'
                                         */
   real_T u_VSP1_P1;                    /* Expression: width
                                         * Referenced by: '<Root>/u_VSP1'
@@ -924,6 +937,30 @@ struct P_ctrl_sixaxis2thruster_T_ {
   real_T u_VSP1_P6;                    /* Expression: btype
                                         * Referenced by: '<Root>/u_VSP1'
                                         */
+  real_T PosYRight_P1;                 /* Expression: width
+                                        * Referenced by: '<Root>/PosYRight'
+                                        */
+  real_T PosYRight_P2;                 /* Expression: dtype
+                                        * Referenced by: '<Root>/PosYRight'
+                                        */
+  real_T PosYRight_P3;                 /* Expression: portnum
+                                        * Referenced by: '<Root>/PosYRight'
+                                        */
+  real_T PosYRight_P4;                 /* Expression: stime
+                                        * Referenced by: '<Root>/PosYRight'
+                                        */
+  real_T PosYRight_P5;                 /* Expression: stype
+                                        * Referenced by: '<Root>/PosYRight'
+                                        */
+  real_T PosYRight_P6;                 /* Expression: btype
+                                        * Referenced by: '<Root>/PosYRight'
+                                        */
+  real_T Gain1_Gain;                   /* Expression: -1
+                                        * Referenced by: '<Root>/Gain1'
+                                        */
+  real_T Switch1_Threshold;            /* Expression: 0
+                                        * Referenced by: '<Root>/Switch1'
+                                        */
   real_T alpha_VSP2_P1;                /* Expression: width
                                         * Referenced by: '<Root>/alpha_VSP2'
                                         */
@@ -942,23 +979,8 @@ struct P_ctrl_sixaxis2thruster_T_ {
   real_T alpha_VSP2_P6;                /* Expression: btype
                                         * Referenced by: '<Root>/alpha_VSP2'
                                         */
-  real_T PosXRight_P1;                 /* Expression: width
-                                        * Referenced by: '<Root>/PosXRight'
-                                        */
-  real_T PosXRight_P2;                 /* Expression: dtype
-                                        * Referenced by: '<Root>/PosXRight'
-                                        */
-  real_T PosXRight_P3;                 /* Expression: portnum
-                                        * Referenced by: '<Root>/PosXRight'
-                                        */
-  real_T PosXRight_P4;                 /* Expression: stime
-                                        * Referenced by: '<Root>/PosXRight'
-                                        */
-  real_T PosXRight_P5;                 /* Expression: stype
-                                        * Referenced by: '<Root>/PosXRight'
-                                        */
-  real_T PosXRight_P6;                 /* Expression: btype
-                                        * Referenced by: '<Root>/PosXRight'
+  real_T Switch_Threshold;             /* Expression: 0
+                                        * Referenced by: '<Root>/Switch'
                                         */
   real_T alpha_VSP1_P1;                /* Expression: width
                                         * Referenced by: '<Root>/alpha_VSP1'
@@ -978,44 +1000,23 @@ struct P_ctrl_sixaxis2thruster_T_ {
   real_T alpha_VSP1_P6;                /* Expression: btype
                                         * Referenced by: '<Root>/alpha_VSP1'
                                         */
-  real_T Start_P1;                     /* Expression: width
-                                        * Referenced by: '<Root>/Start'
+  real_T PosXRight_P1;                 /* Expression: width
+                                        * Referenced by: '<Root>/PosXRight'
                                         */
-  real_T Start_P2;                     /* Expression: dtype
-                                        * Referenced by: '<Root>/Start'
+  real_T PosXRight_P2;                 /* Expression: dtype
+                                        * Referenced by: '<Root>/PosXRight'
                                         */
-  real_T Start_P3;                     /* Expression: portnum
-                                        * Referenced by: '<Root>/Start'
+  real_T PosXRight_P3;                 /* Expression: portnum
+                                        * Referenced by: '<Root>/PosXRight'
                                         */
-  real_T Start_P4;                     /* Expression: stime
-                                        * Referenced by: '<Root>/Start'
+  real_T PosXRight_P4;                 /* Expression: stime
+                                        * Referenced by: '<Root>/PosXRight'
                                         */
-  real_T Start_P5;                     /* Expression: stype
-                                        * Referenced by: '<Root>/Start'
+  real_T PosXRight_P5;                 /* Expression: stype
+                                        * Referenced by: '<Root>/PosXRight'
                                         */
-  real_T Start_P6;                     /* Expression: btype
-                                        * Referenced by: '<Root>/Start'
-                                        */
-  real_T PosYRight_P1;                 /* Expression: width
-                                        * Referenced by: '<Root>/PosYRight'
-                                        */
-  real_T PosYRight_P2;                 /* Expression: dtype
-                                        * Referenced by: '<Root>/PosYRight'
-                                        */
-  real_T PosYRight_P3;                 /* Expression: portnum
-                                        * Referenced by: '<Root>/PosYRight'
-                                        */
-  real_T PosYRight_P4;                 /* Expression: stime
-                                        * Referenced by: '<Root>/PosYRight'
-                                        */
-  real_T PosYRight_P5;                 /* Expression: stype
-                                        * Referenced by: '<Root>/PosYRight'
-                                        */
-  real_T PosYRight_P6;                 /* Expression: btype
-                                        * Referenced by: '<Root>/PosYRight'
-                                        */
-  real_T Gain_Gain;                    /* Expression: -1
-                                        * Referenced by: '<Root>/Gain'
+  real_T PosXRight_P6;                 /* Expression: btype
+                                        * Referenced by: '<Root>/PosXRight'
                                         */
   real_T u_VSP2_P1;                    /* Expression: width
                                         * Referenced by: '<Root>/u_VSP2'
@@ -1034,6 +1035,24 @@ struct P_ctrl_sixaxis2thruster_T_ {
                                         */
   real_T u_VSP2_P6;                    /* Expression: btype
                                         * Referenced by: '<Root>/u_VSP2'
+                                        */
+  real_T Start_P1;                     /* Expression: width
+                                        * Referenced by: '<Root>/Start'
+                                        */
+  real_T Start_P2;                     /* Expression: dtype
+                                        * Referenced by: '<Root>/Start'
+                                        */
+  real_T Start_P3;                     /* Expression: portnum
+                                        * Referenced by: '<Root>/Start'
+                                        */
+  real_T Start_P4;                     /* Expression: stime
+                                        * Referenced by: '<Root>/Start'
+                                        */
+  real_T Start_P5;                     /* Expression: stype
+                                        * Referenced by: '<Root>/Start'
+                                        */
+  real_T Start_P6;                     /* Expression: btype
+                                        * Referenced by: '<Root>/Start'
                                         */
   real_T ArrowUp_P1;                   /* Expression: width
                                         * Referenced by: '<Root>/ArrowUp'
@@ -1131,6 +1150,9 @@ struct P_ctrl_sixaxis2thruster_T_ {
   real_T ArrowDown_P6;                 /* Expression: btype
                                         * Referenced by: '<Root>/ArrowDown'
                                         */
+  real_T Constant_Value;               /* Expression: 0.3
+                                        * Referenced by: '<Root>/Constant'
+                                        */
   real_T omega_VSP1_P1;                /* Expression: width
                                         * Referenced by: '<Root>/omega_VSP1'
                                         */
@@ -1166,24 +1188,6 @@ struct P_ctrl_sixaxis2thruster_T_ {
                                         */
   real_T omega_VSP2_P6;                /* Expression: btype
                                         * Referenced by: '<Root>/omega_VSP2'
-                                        */
-  real_T SCOPE_BT_P1;                  /* Expression: width
-                                        * Referenced by: '<Root>/SCOPE_BT'
-                                        */
-  real_T SCOPE_BT_P2;                  /* Expression: dtype
-                                        * Referenced by: '<Root>/SCOPE_BT'
-                                        */
-  real_T SCOPE_BT_P3;                  /* Expression: portnum
-                                        * Referenced by: '<Root>/SCOPE_BT'
-                                        */
-  real_T SCOPE_BT_P4;                  /* Expression: stime
-                                        * Referenced by: '<Root>/SCOPE_BT'
-                                        */
-  real_T SCOPE_BT_P5;                  /* Expression: stype
-                                        * Referenced by: '<Root>/SCOPE_BT'
-                                        */
-  real_T SCOPE_BT_P6;                  /* Expression: btype
-                                        * Referenced by: '<Root>/SCOPE_BT'
                                         */
   real_T NIVeriStandSignalProbe_P1;    /* Expression: 1
                                         * Referenced by: '<Root>/NIVeriStandSignalProbe'
@@ -1304,9 +1308,6 @@ extern B_ctrl_sixaxis2thruster_T ctrl_sixaxis2thruster_B;
 
 /* Block states (auto storage) */
 extern DW_ctrl_sixaxis2thruster_T ctrl_sixaxis2thruster_DW;
-
-/* External data declarations for dependent source files */
-extern const real_T ctrl_sixaxis2thruster_RGND;/* real_T ground */
 
 /*====================*
  * External functions *

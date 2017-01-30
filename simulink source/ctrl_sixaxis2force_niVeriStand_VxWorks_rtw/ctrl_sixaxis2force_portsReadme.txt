@@ -1,5 +1,7 @@
 	<portlist>
 <inport> id="-1"  name = "PosXLeft" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "PosYRight" width = "1" datatype = "0"</inport>
+<inport> id="-1"  name = "PosXRight" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "PosYLeft" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "L2_continuous" width = "1" datatype = "0"</inport>
 <inport> id="-1"  name = "R2_continuous" width = "1" datatype = "0"</inport>

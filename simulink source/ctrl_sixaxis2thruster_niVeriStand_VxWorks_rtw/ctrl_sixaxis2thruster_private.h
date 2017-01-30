@@ -7,9 +7,9 @@
  *
  * Code generation for model "ctrl_sixaxis2thruster".
  *
- * Model version              : 1.28
+ * Model version              : 1.38
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Thu Jan 26 15:49:47 2017
+ * C source code generated on : Mon Jan 30 14:07:54 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
