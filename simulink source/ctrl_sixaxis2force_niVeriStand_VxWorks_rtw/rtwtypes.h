@@ -1,15 +1,11 @@
 /*
  * rtwtypes.h
  *
- * Academic License - for use in teaching, academic research, and meeting
- * course requirements at degree granting institutions only.  Not for
- * government, commercial, or other organizational use.
- *
  * Code generation for model "ctrl_sixaxis2force".
  *
- * Model version              : 1.41
- * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Mon Jan 30 14:13:55 2017
+ * Model version              : 1.26
+ * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
+ * C source code generated on : Sun Mar 08 15:44:17 2015
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

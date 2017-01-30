@@ -1,15 +1,11 @@
 /*
  * rt_defines.h
  *
- * Academic License - for use in teaching, academic research, and meeting
- * course requirements at degree granting institutions only.  Not for
- * government, commercial, or other organizational use.
- *
  * Code generation for model "ctrl_switch".
  *
- * Model version              : 1.21
- * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Mon Jan 30 14:05:57 2017
+ * Model version              : 1.19
+ * Simulink Coder version : 8.6 (R2014a) 27-Dec-2013
+ * C source code generated on : Fri Dec 04 14:49:29 2015
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

@@ -15,9 +15,9 @@
  *
  * Code generation for model "ctrl_sixaxis2thruster".
  *
- * Model version              : 1.38
+ * Model version              : 1.28
  * Simulink Coder version : 8.8 (R2015a) 09-Feb-2015
- * C source code generated on : Mon Jan 30 14:07:54 2017
+ * C source code generated on : Thu Jan 26 15:49:47 2017
  *
  * Target selection: NIVeriStand_VxWorks.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -30,18 +30,6 @@
 
 /* Block parameters (auto storage) */
 P_ctrl_sixaxis2thruster_T ctrl_sixaxis2thruster_P = {
-  3.1415926535897931,                  /* Expression: pi
-                                        * Referenced by: '<Root>/Constant4'
-                                        */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<Root>/Constant3'
-                                        */
-  3.1415926535897931,                  /* Expression: pi
-                                        * Referenced by: '<Root>/Constant2'
-                                        */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<Root>/Constant1'
-                                        */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/PosXLeft'
                                         */
@@ -79,7 +67,7 @@ P_ctrl_sixaxis2thruster_T ctrl_sixaxis2thruster_P = {
                                         * Referenced by: '<Root>/PosYLeft'
                                         */
   -1.0,                                /* Expression: -1
-                                        * Referenced by: '<Root>/Gain'
+                                        * Referenced by: '<Root>/Gain1'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/u_VSP1'
@@ -98,6 +86,78 @@ P_ctrl_sixaxis2thruster_T ctrl_sixaxis2thruster_P = {
                                         */
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<Root>/u_VSP1'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/alpha_VSP2'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/alpha_VSP2'
+                                        */
+  2.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/alpha_VSP2'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/alpha_VSP2'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/alpha_VSP2'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/alpha_VSP2'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  3.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/PosXRight'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/alpha_VSP1'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/alpha_VSP1'
+                                        */
+  3.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/alpha_VSP1'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/alpha_VSP1'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/alpha_VSP1'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/alpha_VSP1'
+                                        */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/Start'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/Start'
+                                        */
+  4.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/Start'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/Start'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/Start'
+                                        */
+  1.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/Start'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/PosYRight'
@@ -118,67 +178,7 @@ P_ctrl_sixaxis2thruster_T ctrl_sixaxis2thruster_P = {
                                         * Referenced by: '<Root>/PosYRight'
                                         */
   -1.0,                                /* Expression: -1
-                                        * Referenced by: '<Root>/Gain1'
-                                        */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<Root>/Switch1'
-                                        */
-  -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/alpha_VSP2'
-                                        */
-  1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/alpha_VSP2'
-                                        */
-  2.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/alpha_VSP2'
-                                        */
-  -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/alpha_VSP2'
-                                        */
-  1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/alpha_VSP2'
-                                        */
-  0.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/alpha_VSP2'
-                                        */
-  0.0,                                 /* Expression: 0
-                                        * Referenced by: '<Root>/Switch'
-                                        */
-  -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/alpha_VSP1'
-                                        */
-  1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/alpha_VSP1'
-                                        */
-  3.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/alpha_VSP1'
-                                        */
-  -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/alpha_VSP1'
-                                        */
-  1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/alpha_VSP1'
-                                        */
-  0.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/alpha_VSP1'
-                                        */
-  -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/PosXRight'
-                                        */
-  1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/PosXRight'
-                                        */
-  3.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/PosXRight'
-                                        */
-  -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/PosXRight'
-                                        */
-  1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/PosXRight'
-                                        */
-  1.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/PosXRight'
+                                        * Referenced by: '<Root>/Gain'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/u_VSP2'
@@ -197,24 +197,6 @@ P_ctrl_sixaxis2thruster_T ctrl_sixaxis2thruster_P = {
                                         */
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<Root>/u_VSP2'
-                                        */
-  -1.0,                                /* Expression: width
-                                        * Referenced by: '<Root>/Start'
-                                        */
-  1.0,                                 /* Expression: dtype
-                                        * Referenced by: '<Root>/Start'
-                                        */
-  4.0,                                 /* Expression: portnum
-                                        * Referenced by: '<Root>/Start'
-                                        */
-  -1.0,                                /* Expression: stime
-                                        * Referenced by: '<Root>/Start'
-                                        */
-  1.0,                                 /* Expression: stype
-                                        * Referenced by: '<Root>/Start'
-                                        */
-  1.0,                                 /* Expression: btype
-                                        * Referenced by: '<Root>/Start'
                                         */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/ArrowUp'
@@ -312,9 +294,6 @@ P_ctrl_sixaxis2thruster_T ctrl_sixaxis2thruster_P = {
   1.0,                                 /* Expression: btype
                                         * Referenced by: '<Root>/ArrowDown'
                                         */
-  0.3,                                 /* Expression: 0.3
-                                        * Referenced by: '<Root>/Constant'
-                                        */
   -1.0,                                /* Expression: width
                                         * Referenced by: '<Root>/omega_VSP1'
                                         */
@@ -351,6 +330,24 @@ P_ctrl_sixaxis2thruster_T ctrl_sixaxis2thruster_P = {
   0.0,                                 /* Expression: btype
                                         * Referenced by: '<Root>/omega_VSP2'
                                         */
+  -1.0,                                /* Expression: width
+                                        * Referenced by: '<Root>/SCOPE_BT'
+                                        */
+  1.0,                                 /* Expression: dtype
+                                        * Referenced by: '<Root>/SCOPE_BT'
+                                        */
+  8.0,                                 /* Expression: portnum
+                                        * Referenced by: '<Root>/SCOPE_BT'
+                                        */
+  -1.0,                                /* Expression: stime
+                                        * Referenced by: '<Root>/SCOPE_BT'
+                                        */
+  1.0,                                 /* Expression: stype
+                                        * Referenced by: '<Root>/SCOPE_BT'
+                                        */
+  0.0,                                 /* Expression: btype
+                                        * Referenced by: '<Root>/SCOPE_BT'
+                                        */
   1.0                                  /* Expression: 1
                                         * Referenced by: '<Root>/NIVeriStandSignalProbe'
                                         */
@@ -367,8 +364,6 @@ typedef struct {
 NI_ParamSizeWidth P_ctrl_sixaxis2thruster_T_sizes[] DataSection(
   ".NIVS.defaultparamsizes") = {
   { sizeof(P_ctrl_sixaxis2thruster_T), 1 },
-
-  { sizeof(real_T), 1, 0 },
 
   { sizeof(real_T), 1, 0 },
 
